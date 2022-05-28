@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import GlobalStyle from "styles/global";
 
+import Navbar from "components/Navbar";
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
 
@@ -13,6 +14,7 @@ function AppRoutes() {
       <GlobalStyle />
       <BrowserRouter>
         <main>
+          <Navbar />
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="*" element={<NotFound />} />
