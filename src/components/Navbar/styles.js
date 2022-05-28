@@ -9,7 +9,7 @@ export const Container = styled.div`
   background-color: ${colors.brandBlue};
 
   .logo {
-    width: 100px;
+    width: 76px;
   }
 
   .container-nav {

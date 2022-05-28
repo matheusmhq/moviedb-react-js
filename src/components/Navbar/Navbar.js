@@ -8,7 +8,7 @@ import Icon from "components/Icon";
 
 const Navbar = () => {
   return (
-    <S.Container className="p-3">
+    <S.Container className="p-3 mb-5">
       <div className="container-nav">
         <Link to="/">
           <img title="Tmdb" alt="Tmdb" className="logo" src={logo} />
