@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import GlobalStyle from "styles/global";
 
-import Movies from "../pages/Movies";
+import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
 
 function AppRoutes() {
@@ -14,7 +14,7 @@ function AppRoutes() {
       <BrowserRouter>
         <main>
           <Routes>
-            <Route exact path="/" element={<Movies />} />
+            <Route exact path="/" element={<Home />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
