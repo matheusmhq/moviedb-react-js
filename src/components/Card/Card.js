@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import * as S from "./styles";
 import { getImage } from "functions/utils";
+import moment from "moment";
 
 const Card = ({ id, title, posterPath, releaseDate, voteAverage }) => {
   return (
@@ -40,7 +41,9 @@ const Card = ({ id, title, posterPath, releaseDate, voteAverage }) => {
           <Link to={""} title={title} alt={title}>
             <CardComponent.Title>{title}</CardComponent.Title>
           </Link>
-          <CardComponent.Text>{releaseDate}</CardComponent.Text>
+          <CardComponent.Text>
+            {moment(releaseDate).format("ll")}
+          </CardComponent.Text>
         </CardComponent.Body>
       </CardComponent>
     </S.Card>
