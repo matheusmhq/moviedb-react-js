@@ -1,8 +1,9 @@
 import colors from "styles/colors";
+import placeholder from "assets/images/placeholder.jpg";
 
 export function getImage(image, size) {
-  if (image == undefined || image == null || image == "") return false;
-  return `https://image.tmdb.org/t/p/${size || "w500"}${image}`;
+  if (image) return `https://image.tmdb.org/t/p/${size || "w500"}${image}`;
+  return placeholder;
 }
 
 export function urlParams() {
