@@ -1,5 +1,8 @@
 import api from "services/api";
 
+const qtyMaxOfPages = 500;
+const qtyMaxOfResults = 10000;
+
 export const getList = (
   query,
   page,
@@ -29,12 +32,19 @@ export const getList = (
       if (response.status == 200) {
         const { results, total_pages, total_results } = response.data;
         setList(results);
-        setLastPage(total_pages);
-        setTotalResults(total_results);
+        setLastPage(total_pages > qtyMaxOfPages ? qtyMaxOfPages : total_pages);
+        setTotalResults(
+          total_results > qtyMaxOfResults ? qtyMaxOfResults : total_results
+        );
       }
     })
     .catch((error) => {
       console.log(error);
     })
-    .finally(() => setLoading(false));
+    .finally(() => {
+      setLoading(false);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 100);
+    });
 };

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-import Loading from "components/Loading";
+import LoadingCard from "components/Loadings/LoadingCard";
 import Card from "components/Card";
 import { setParamsUrl, getUrlParameter } from "functions/utils";
 import { getList } from "./js/api";
@@ -46,7 +46,7 @@ const Home = () => {
     <Container fluid>
       <Row>
         {loading ? (
-          <Loading />
+          <LoadingCard qty={8} />
         ) : (
           list.map((item, index) => {
             return (
