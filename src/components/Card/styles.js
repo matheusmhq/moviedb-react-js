@@ -12,7 +12,7 @@ export const Card = styled(Col)`
   }
 
   .card-title:hover {
-    color: ${colors.lightGlue};
+    color: ${colors.lightBlue};
   }
 
   .card-text {
