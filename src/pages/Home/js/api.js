@@ -41,10 +41,5 @@ export const getList = (
     .catch((error) => {
       console.log(error);
     })
-    .finally(() => {
-      setLoading(false);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-      }, 100);
-    });
+    .finally(() => setLoading(false));
 };
