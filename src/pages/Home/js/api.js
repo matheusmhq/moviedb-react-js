@@ -12,13 +12,14 @@ export const getList = (
 
   var params = {
     page,
+    sort_by: "popularity.desc",
   };
   var endpoint = "/movie/popular";
 
   if (query) {
     params.query = query;
     endpoint = "/search/movie";
-  } else params.sort_by = "popularity.desc";
+  }
 
   api
     .get(endpoint, {
