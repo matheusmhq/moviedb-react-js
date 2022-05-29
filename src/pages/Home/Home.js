@@ -7,6 +7,7 @@ import Card from "components/Card";
 import { setParamsUrl, getUrlParameter } from "functions/utils";
 import { getList } from "./js/api";
 import Pagination from "components/Pagination";
+import MsgEmpty from "components/MsgEmpty";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -47,6 +48,8 @@ const Home = () => {
       <Row>
         {loading ? (
           <Loading />
+        ) : list.length == 0 ? (
+          <MsgEmpty />
         ) : (
           list.map((item, index) => {
             return (
