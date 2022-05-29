@@ -1,18 +1,26 @@
 import api from "services/api";
 
 export const getList = (
+  query,
   page,
   setLastPage,
   setTotalResults,
   setList,
   setLoading
 ) => {
+  var params = {
+    page,
+  };
+  var endpoint = "/movie/popular";
+
+  if (query) {
+    params.query = query;
+    endpoint = "/search/movie";
+  } else params.sort_by = "popularity.desc";
+
   api
-    .get(`/movie/popular`, {
-      params: {
-        page,
-        sort_by: "popularity.desc",
-      },
+    .get(endpoint, {
+      params,
     })
     .then((response) => {
       if (response.status == 200) {

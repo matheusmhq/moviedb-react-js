@@ -8,17 +8,17 @@ import { getList } from "./js/api";
 
 const Home = () => {
   const navigate = useNavigate();
+  const query = getUrlParameter("query", "");
 
   const [loading, setLoading] = useState(false);
   const [list, setList] = useState([]);
   const [page, setPage] = useState(getUrlParameter("page", 1));
   const [lastPage, setLastPage] = useState(null);
   const [totalResults, setTotalResults] = useState(null);
-  const [query, setQuery] = useState("");
 
   useEffect(() => {
     getListTemp();
-  }, [page]);
+  }, [page, query]);
 
   function getListTemp() {
     var obj = {
@@ -27,10 +27,14 @@ const Home = () => {
           name: "page",
           value: page,
         },
+        {
+          name: "query",
+          value: query,
+        },
       ],
     };
     setParamsUrl(navigate, obj);
-    getList(page, setLastPage, setTotalResults, setList, setLoading);
+    getList(query, page, setLastPage, setTotalResults, setList, setLoading);
   }
 
   return (
