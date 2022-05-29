@@ -46,6 +46,18 @@ const Home = () => {
   return (
     <Container fluid>
       <Row>
+        <div className="container-title-movies">
+          {query ? (
+            <h2>
+              Pesquisando por: <span>{query}</span>
+            </h2>
+          ) : (
+            <h2>
+              Filmes <span>Populares</span>
+            </h2>
+          )}
+        </div>
+
         {loading ? (
           <Loading />
         ) : list.length == 0 ? (

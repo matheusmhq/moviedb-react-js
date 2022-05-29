@@ -36,7 +36,7 @@ const Navbar = () => {
   );
 
   return (
-    <S.Container className="p-3 mb-5">
+    <S.Container className="p-3">
       <div className="container-nav">
         <button className="btn-no-styles" onClick={goToHome}>
           <img title="Tmdb" alt="Tmdb" className="logo" src={logo} />

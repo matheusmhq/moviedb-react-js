@@ -19,4 +19,15 @@ export default createGlobalStyle`
         background-color: transparent;
         border: none;
     }
+
+    .container-title-movies {
+        margin: 26px 0 30px 0;
+        h2 {
+            font-weight: bold;
+            span {
+                color: ${colors.lightBlue};
+                
+            }
+        }
+    }
 `;
