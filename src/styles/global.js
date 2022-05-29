@@ -14,4 +14,9 @@ export default createGlobalStyle`
     a {
         text-decoration: none;
     }
+
+    .btn-no-styles {
+        background-color: transparent;
+        border: none;
+    }
 `;

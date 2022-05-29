@@ -6,15 +6,25 @@ import logo from "assets/images/logo.png";
 import * as S from "./styles";
 import Icon from "components/Icon";
 import { getUrlParameter } from "functions/utils";
-import { useDebounce, useComponentDidMount } from "functions/hooks";
+import {
+  useDebounce,
+  useComponentDidMount,
+  usePathname,
+} from "functions/hooks";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const pathname = usePathname();
   const isComponentMounted = useComponentDidMount();
   const [query, setQuery] = useState(getUrlParameter("query", ""));
 
   function search() {
     navigate(`/?page=1&query=${query}`);
+  }
+
+  function goToHome() {
+    if (pathname == "/") return;
+    navigate("/");
   }
 
   useDebounce(
@@ -28,9 +38,9 @@ const Navbar = () => {
   return (
     <S.Container className="p-3 mb-5">
       <div className="container-nav">
-        <Link to="/">
+        <button className="btn-no-styles" onClick={goToHome}>
           <img title="Tmdb" alt="Tmdb" className="logo" src={logo} />
-        </Link>
+        </button>
         <div className="container-search">
           <InputGroup>
             <InputGroup.Text id="inputGroup-sizing-default">
