@@ -11,7 +11,7 @@ import Pagination from "components/Pagination";
 const Home = () => {
   const navigate = useNavigate();
   const query = getUrlParameter("query", "");
-  const page = getUrlParameter("page", "");
+  const page = getUrlParameter("page", 1);
   function setPage(value) {
     navigate(`/?page=${value}&query=${query}`);
   }
