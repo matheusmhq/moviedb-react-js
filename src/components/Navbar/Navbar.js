@@ -43,7 +43,7 @@ const Navbar = () => {
         </button>
         <div className="container-search">
           <InputGroup>
-            <InputGroup.Text id="inputGroup-sizing-default">
+            <InputGroup.Text>
               <Icon name="magnify" />
             </InputGroup.Text>
             <FormControl
@@ -51,6 +51,15 @@ const Navbar = () => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
+            <InputGroup.Text className="container-btn-clear">
+              <button
+                title="Limpar pesquisa"
+                className="btn-clear btn-no-styles"
+                onClick={() => setQuery("")}
+              >
+                <Icon name="close" />
+              </button>
+            </InputGroup.Text>
           </InputGroup>
         </div>
       </div>

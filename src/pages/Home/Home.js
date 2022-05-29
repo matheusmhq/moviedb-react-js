@@ -9,6 +9,9 @@ import { getList } from "./js/api";
 import Pagination from "components/Pagination";
 import MsgEmpty from "components/MsgEmpty";
 
+const msg =
+  "Nenhum resultado foi encontrado \nVerifique se o nome digitado está correto";
+
 const Home = () => {
   const navigate = useNavigate();
   const query = getUrlParameter("query", "");
@@ -61,7 +64,7 @@ const Home = () => {
         {loading ? (
           <Loading />
         ) : list.length == 0 ? (
-          <MsgEmpty />
+          <MsgEmpty msg={msg} />
         ) : (
           list.map((item, index) => {
             return (

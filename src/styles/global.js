@@ -30,4 +30,13 @@ export default createGlobalStyle`
             }
         }
     }
+
+    input {
+        border: none !important;
+        &:focus {
+            box-shadow: none !important;
+            outline: none !important;
+            border: none;
+        }
+    }
 `;

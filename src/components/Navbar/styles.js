@@ -27,4 +27,21 @@ export const Container = styled.div`
       }
     }
   }
+
+  input {
+    width: 80%;
+  }
+
+  .container-btn-clear {
+    background-color: ${colors.white};
+
+    .btn-clear {
+      background-color: transparent;
+      position: absolute;
+      right: 0;
+      height: 100%;
+      border-radius: 10px !important;
+      z-index: 10;
+    }
+  }
 `;

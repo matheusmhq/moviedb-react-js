@@ -8,5 +8,6 @@ export const Container = styled.div`
   p {
     color: ${colors.darkerGray};
     font-size: 20px;
+    white-space: pre-wrap;
   }
 `;
