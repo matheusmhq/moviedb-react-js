@@ -18,6 +18,9 @@ const colors = {
 
   lightGreen: "rgba(30, 213, 169)",
   lightGlue: "rgba(1, 180, 228)",
+
+  black: "#000",
+  white: "#fff",
 };
 
 export default colors;

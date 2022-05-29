@@ -1,10 +1,11 @@
 import React from "react";
 import { Card as CardComponent } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import moment from "moment";
 
 import * as S from "./styles";
 import { getImage } from "functions/utils";
-import moment from "moment";
+import CircularProgressbar from "components/CircularProgressbar";
 
 const Card = ({ id, title, posterPath, releaseDate, voteAverage }) => {
   return (
@@ -17,25 +18,7 @@ const Card = ({ id, title, posterPath, releaseDate, voteAverage }) => {
             variant="top"
             src={getImage(posterPath)}
           />
-          {/* <div className="container-rating">
-            <CircularProgressbar
-              strokeWidth={7}
-              styles={buildStyles({
-                textSize: "28px",
-                pathColor: GetColorRating(Math.floor(voteAverage)),
-                textColor: "white",
-                trailColor: HexToRgbA(
-                  GetColorRating(Math.floor(voteAverage)),
-                  0.3
-                ),
-                backgroundColor: "black",
-              })}
-              background={true}
-              backgroundPadding={true}
-              value={Math.floor(voteAverage) * 10}
-              text={`${Math.floor(voteAverage) * 10}%`}
-            />
-          </div> */}
+          <CircularProgressbar voteAverage={voteAverage} />
         </Link>
         <CardComponent.Body>
           <Link to={""} title={title} alt={title}>
