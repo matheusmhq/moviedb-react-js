@@ -8,6 +8,8 @@ export const getList = (
   setList,
   setLoading
 ) => {
+  setLoading(true);
+
   var params = {
     page,
   };
@@ -24,9 +26,9 @@ export const getList = (
     })
     .then((response) => {
       if (response.status == 200) {
-        const { results, last_page, total_results } = response.data;
+        const { results, total_pages, total_results } = response.data;
         setList(results);
-        setLastPage(last_page);
+        setLastPage(total_pages);
         setTotalResults(total_results);
       }
     })

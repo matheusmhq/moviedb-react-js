@@ -17,7 +17,7 @@ const colors = {
   cultured: "#f4f4f4",
 
   lightGreen: "rgba(30, 213, 169)",
-  lightGlue: "rgba(1, 180, 228)",
+  lightBlue: "rgba(1, 180, 228)",
 
   black: "#000",
   white: "#fff",
