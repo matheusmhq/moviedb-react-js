@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import moment from "moment";
 
 import Loading from "components/Loading";
 import Card from "components/Card";
@@ -74,8 +75,8 @@ const Home = () => {
                 key={index}
                 id={item.id}
                 title={item.title}
-                posterPath={item.poster_path}
-                releaseDate={item.release_date}
+                imagePath={item.poster_path}
+                subtitle={moment(item.release_date).format("ll")}
                 voteAverage={item.vote_average}
               />
             );

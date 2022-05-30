@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import colors from "styles/colors";
+
 export const ContainerTop = styled.div`
   background-position: top;
   background-repeat: no-repeat;
@@ -73,6 +75,37 @@ export const ContainerTop = styled.div`
 
     @media screen and (min-width: 768px) {
       max-width: 200px;
+    }
+  }
+`;
+
+export const ContainerBottom = styled.div`
+  .btn-more {
+    color: ${colors.darkGray};
+    font-weight: bold;
+  }
+
+  .info-item {
+    margin-top: 20px;
+
+    h3 {
+      font-size: 24px;
+      color: ${colors.black};
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .keyword {
+      background-color: ${colors.lightGray};
+      color: ${colors.darkerGray};
+      padding: 4px 8px;
+      border-radius: 6px;
+      margin: 0 10px 10px 0;
+      list-style-type: none;
     }
   }
 `;

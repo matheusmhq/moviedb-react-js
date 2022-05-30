@@ -6,10 +6,20 @@ import moment from "moment";
 import Loading from "components/Loading";
 import * as S from "./styles";
 import { getDetails } from "./js/api";
-import { getImage, convertRuntime } from "functions/utils";
+import {
+  getImage,
+  convertRuntime,
+  statusMovieToBr,
+  formatterDollar,
+} from "functions/utils";
 import CircularProgressbar from "components/CircularProgressbar";
 import ModalTrailer from "components/Modals/ModalTrailer";
 import Icon from "components/Icon";
+import Card from "components/Card";
+import MsgEmpty from "components/MsgEmpty";
+import Social from "components/Social";
+import InfoItem from "./components/InfoItem";
+import Keyword from "./components/Keyword";
 
 const Details = () => {
   const { id } = useParams();
@@ -18,6 +28,7 @@ const Details = () => {
   const [details, setDetails] = useState({});
   const [trailerId, setTrailerId] = useState("");
   const [showModalTrailer, setShowModalTrailer] = useState(false);
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     getDetails(id, setTrailerId, setDetails, setLoading);
@@ -100,9 +111,88 @@ const Details = () => {
         </Container>
       </S.ContainerTop>
 
-      <Container fluid>
-        <p>bottom</p>
-      </Container>
+      <S.ContainerBottom>
+        <Container fluid className="mt-4">
+          <Row>
+            <Col xs={12} md={8} lg={8}>
+              <div className="panel">
+                <h3 className="mb-4 font-weight-bold text-center text-md-start">
+                  Elenco principal
+                </h3>
+                <Row>
+                  {details.credits.cast.length == 0 ? (
+                    <MsgEmpty msg="Indisponível" />
+                  ) : (
+                    details.credits.cast
+                      .slice(0, showMore ? 999 : 8)
+                      .map((item, index) => {
+                        return (
+                          <Card
+                            key={index}
+                            id={item.id}
+                            title={item.original_name}
+                            imagePath={item.profile_path}
+                            subtitle={item.character}
+                            voteAverage={item.vote_average}
+                            disableOnClick={true}
+                          />
+                        );
+                      })
+                  )}
+                </Row>
+                <div className="d-flex justify-content-center align-items-center">
+                  <button
+                    className="btn-no-styles btn-more mt-2 mb-4 mb-md-0"
+                    onClick={() => setShowMore(!showMore)}
+                  >
+                    ver {showMore ? "menos" : "mais"}
+                  </button>
+                </div>
+              </div>
+            </Col>
+
+            <Col xs={12} md={4} lg={4}>
+              <div className="info text-center text-md-start">
+                <Social
+                  social={details.external_ids}
+                  homepage={details.homepage}
+                />
+
+                <InfoItem
+                  title="Título original"
+                  info={details.original_title}
+                />
+
+                <InfoItem
+                  title="Situação"
+                  info={statusMovieToBr(details.status)}
+                />
+
+                <InfoItem
+                  title="Orçamento"
+                  info={formatterDollar(details.budget)}
+                />
+
+                <InfoItem
+                  title="Receita"
+                  info={formatterDollar(details.revenue)}
+                />
+
+                {details.keywords.keywords.length > 0 && (
+                  <div className="info-item">
+                    <h3>Palavras-chave</h3>
+                    <ul className="d-flex flex-wrap justify-content-center justify-content-md-start p-0">
+                      {details.keywords.keywords.map((item, index) => {
+                        return <Keyword key={index} keyword={item.name} />;
+                      })}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </S.ContainerBottom>
     </div>
   );
 };

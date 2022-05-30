@@ -1,32 +1,43 @@
 import React from "react";
 import { Card as CardComponent } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import moment from "moment";
 
 import * as S from "./styles";
 import { getImage } from "functions/utils";
 import CircularProgressbar from "components/CircularProgressbar";
 
-const Card = ({ id, title, posterPath, releaseDate, voteAverage }) => {
+const Card = ({
+  id,
+  title,
+  imagePath,
+  subtitle,
+  voteAverage,
+  disableOnClick,
+}) => {
   return (
     <S.Card xs={6} sm={4} lg={3} className="mb-3">
       <CardComponent className="h-100">
-        <Link to={`/details/${id}`} className="position-relative">
+        <Link
+          to={disableOnClick || `/details/${id}`}
+          className="position-relative"
+        >
           <CardComponent.Img
             title={title}
             alt={title}
             variant="top"
-            src={getImage(posterPath)}
+            src={getImage(imagePath)}
           />
-          <CircularProgressbar voteAverage={voteAverage} />
+          {voteAverage && <CircularProgressbar voteAverage={voteAverage} />}
         </Link>
         <CardComponent.Body>
-          <Link to={`/details/${id}`} title={title} alt={title}>
+          <Link
+            to={disableOnClick || `/details/${id}`}
+            title={title}
+            alt={title}
+          >
             <CardComponent.Title>{title}</CardComponent.Title>
           </Link>
-          <CardComponent.Text>
-            {moment(releaseDate).format("ll")}
-          </CardComponent.Text>
+          <CardComponent.Text>{subtitle}</CardComponent.Text>
         </CardComponent.Body>
       </CardComponent>
     </S.Card>

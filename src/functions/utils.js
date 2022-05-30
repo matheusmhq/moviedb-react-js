@@ -60,3 +60,22 @@ export function convertRuntime(min) {
     return `${h} ${m}`;
   }
 }
+
+export function statusMovieToBr(status) {
+  switch (status) {
+    case "Released":
+      return "Lançado";
+    case "Post Production":
+      return "Pós-Produção";
+    case "Planned":
+      return "Planejado";
+  }
+}
+
+export function formatterDollar(money) {
+  if (money == undefined || money == "" || money == null) return false;
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(money);
+}
