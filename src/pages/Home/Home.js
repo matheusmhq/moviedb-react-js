@@ -76,7 +76,11 @@ const Home = () => {
                 id={item.id}
                 title={item.title}
                 imagePath={item.poster_path}
-                subtitle={moment(item.release_date).format("ll")}
+                subtitle={
+                  item.release_date
+                    ? moment(item.release_date).format("ll")
+                    : ""
+                }
                 voteAverage={item.vote_average}
               />
             );
