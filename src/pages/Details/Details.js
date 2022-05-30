@@ -140,14 +140,16 @@ const Details = () => {
                       })
                   )}
                 </Row>
-                <div className="d-flex justify-content-center align-items-center">
-                  <button
-                    className="btn-no-styles btn-more mt-2 mb-4 mb-md-0"
-                    onClick={() => setShowMore(!showMore)}
-                  >
-                    ver {showMore ? "menos" : "mais"}
-                  </button>
-                </div>
+                {details.credits.cast.length > 0 && (
+                  <div className="d-flex justify-content-center align-items-center">
+                    <button
+                      className="btn-no-styles btn-more mt-2 mb-4 mb-md-0"
+                      onClick={() => setShowMore(!showMore)}
+                    >
+                      ver {showMore ? "menos" : "mais"}
+                    </button>
+                  </div>
+                )}
               </div>
             </Col>
 
