@@ -4,7 +4,7 @@ import * as S from "./styles";
 
 const MsgEmpty = ({ msg }) => {
   return (
-    <S.Container>
+    <S.Container data-atestid="msg-empty">
       <p>{msg || "Nenhum resultado encontrado"}</p>
     </S.Container>
   );
