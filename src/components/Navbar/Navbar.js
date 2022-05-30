@@ -24,7 +24,7 @@ const Navbar = () => {
 
   function goToHome() {
     if (pathname == "/") return;
-    navigate("/");
+    search();
   }
 
   useDebounce(
