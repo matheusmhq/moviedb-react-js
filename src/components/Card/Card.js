@@ -15,7 +15,7 @@ const Card = ({
   disableOnClick,
 }) => {
   return (
-    <S.Card xs={6} sm={4} lg={3} className="mb-3">
+    <S.Card xs={6} sm={4} lg={3} className="mb-3" data-testid="card">
       <CardComponent className="h-100">
         <Link
           to={disableOnClick || `/details/${id}`}
