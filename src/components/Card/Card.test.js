@@ -3,7 +3,7 @@ import { MemoryRouter } from "react-router-dom";
 
 import Card from "./Card";
 
-describe("MsgEmpty", () => {
+describe("Card", () => {
   it("should render card with data passed by props", async () => {
     const fakeMovies = [
       {
