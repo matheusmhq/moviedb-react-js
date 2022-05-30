@@ -14,16 +14,18 @@ const msg =
 
 const Home = () => {
   const navigate = useNavigate();
-  const query = getUrlParameter("query", "");
-  const page = getUrlParameter("page", 1);
-  function setPage(value) {
-    navigate(`/?page=${value}&query=${query}`);
-  }
 
   const [loading, setLoading] = useState(false);
   const [list, setList] = useState([]);
   const [lastPage, setLastPage] = useState(null);
   const [totalResults, setTotalResults] = useState(null);
+
+  const query = getUrlParameter("query", "");
+  const page = getUrlParameter("page", 1);
+
+  function setPage(value) {
+    navigate(`/?page=${value}&query=${query}`);
+  }
 
   useEffect(() => {
     getListTemp();

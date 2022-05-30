@@ -18,7 +18,7 @@ export const Container = styled.div`
   }
 
   .btn {
-    background-color: ${colors.brandBlue};
+    background-color: ${colors.lightBlue};
     border: none;
   }
 

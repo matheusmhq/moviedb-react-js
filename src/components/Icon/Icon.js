@@ -1,8 +1,8 @@
 import React from "react";
 
-const Icon = ({ name, customStyles }) => {
+const Icon = ({ name, customClass, customStyles }) => {
   return (
-    <div style={customStyles}>
+    <div class={customClass} style={customStyles}>
       <i className={`mdi mdi-${name}`} />
     </div>
   );

@@ -39,4 +39,16 @@ export default createGlobalStyle`
             border: none;
         }
     }
+
+    p {
+        margin-bottom: 0px;
+    }
+
+    .modal {
+        .modal-header {
+            background-color: ${colors.brandBlue};
+            color: white;
+            border: none;
+        }
+    }
 `;

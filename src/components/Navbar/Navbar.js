@@ -54,6 +54,7 @@ const Navbar = () => {
             <InputGroup.Text className="container-btn-clear">
               <button
                 title="Limpar pesquisa"
+                disabled={query == ""}
                 className="btn-clear btn-no-styles"
                 onClick={() => setQuery("")}
               >

@@ -6,6 +6,7 @@ import GlobalStyle from "styles/global";
 
 import Navbar from "components/Navbar";
 import Home from "../pages/Home";
+import Details from "../pages/Details";
 import NotFound from "../pages/NotFound";
 
 function AppRoutes() {
@@ -17,6 +18,7 @@ function AppRoutes() {
           <Navbar />
           <Routes>
             <Route exact path="/" element={<Home />} />
+            <Route exact path="/details/:id" element={<Details />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

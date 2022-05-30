@@ -11,7 +11,7 @@ const Card = ({ id, title, posterPath, releaseDate, voteAverage }) => {
   return (
     <S.Card xs={6} sm={4} lg={3} className="mb-3">
       <CardComponent className="h-100">
-        <Link to={""} className="position-relative">
+        <Link to={`/details/${id}`} className="position-relative">
           <CardComponent.Img
             title={title}
             alt={title}
@@ -21,7 +21,7 @@ const Card = ({ id, title, posterPath, releaseDate, voteAverage }) => {
           <CircularProgressbar voteAverage={voteAverage} />
         </Link>
         <CardComponent.Body>
-          <Link to={""} title={title} alt={title}>
+          <Link to={`/details/${id}`} title={title} alt={title}>
             <CardComponent.Title>{title}</CardComponent.Title>
           </Link>
           <CardComponent.Text>
