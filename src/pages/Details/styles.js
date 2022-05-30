@@ -80,6 +80,12 @@ export const ContainerTop = styled.div`
 `;
 
 export const ContainerBottom = styled.div`
+  .panel {
+    h3 {
+      font-weight: bold;
+    }
+  }
+
   .btn-more {
     color: ${colors.darkGray};
     font-weight: bold;

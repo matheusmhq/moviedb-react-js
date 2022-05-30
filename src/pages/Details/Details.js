@@ -116,7 +116,7 @@ const Details = () => {
           <Row>
             <Col xs={12} md={8} lg={8}>
               <div className="panel">
-                <h3 className="mb-4 font-weight-bold text-center text-md-start">
+                <h3 className="mb-4 text-center text-md-start">
                   Elenco principal
                 </h3>
                 <Row>

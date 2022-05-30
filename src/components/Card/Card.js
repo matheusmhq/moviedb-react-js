@@ -27,7 +27,9 @@ const Card = ({
             variant="top"
             src={getImage(imagePath)}
           />
-          {voteAverage && <CircularProgressbar voteAverage={voteAverage} />}
+          {(voteAverage || voteAverage == 0) && (
+            <CircularProgressbar voteAverage={voteAverage} />
+          )}
         </Link>
         <CardComponent.Body>
           <Link
