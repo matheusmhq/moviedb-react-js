@@ -7,7 +7,7 @@ const ModalTrailer = ({ show, setShow, trailerId, title }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
+    if (show) setLoading(true);
   }, [show]);
 
   return (
