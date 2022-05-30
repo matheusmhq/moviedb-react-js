@@ -37,7 +37,7 @@ const Details = () => {
   if (loading) return <Loading customClass="mt-5" />;
 
   return (
-    <div>
+    <div className="mb-5">
       <ModalTrailer
         show={showModalTrailer}
         setShow={setShowModalTrailer}
