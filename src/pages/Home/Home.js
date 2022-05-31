@@ -33,7 +33,7 @@ const Home = () => {
   }, [page, query]);
 
   function getListTemp() {
-    var obj = {
+    const obj = {
       params: [
         {
           name: "page",
