@@ -4,7 +4,7 @@ const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
   params: {
     api_key: process.env.REACT_APP_API_KEY,
-    language: "pt",
+    language: "pt-BR",
     include_adult: false,
   },
 });
