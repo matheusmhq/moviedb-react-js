@@ -23,9 +23,10 @@ const Pagination = ({ setPage, page, totalResults, lastPage, loading }) => {
     for (let i = first; i <= last; i++) {
       pages.push(
         <PaginationComponent.Item
-          onClick={() => setPage(i)}
+          data-testid={`btn-page-${i}`}
           key={i}
           active={i == page}
+          onClick={() => setPage(i)}
         >
           {i}
         </PaginationComponent.Item>
@@ -40,7 +41,7 @@ const Pagination = ({ setPage, page, totalResults, lastPage, loading }) => {
     <S.Container className="d-flex flex-wrap my-2 my-md-5">
       <Col xs={12} md={4}>
         <div className="container-info-results d-flex flex-column align-items-center align-items-md-start">
-          <p className="mb-0 info-pages">
+          <p className="mb-0 info-pages" data-testid="info-pages">
             Página {page} de {lastPage}
           </p>
           <p className="info-results">{totalResults} resultado(s)</p>

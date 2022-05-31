@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 
 import MsgEmpty from "./MsgEmpty";
 
-describe("MsgEmpty", () => {
+describe("MsgEmpty component", () => {
   it("should render text default", () => {
     const textDefault = "Nenhum resultado encontrado";
 
