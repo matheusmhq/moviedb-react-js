@@ -20,7 +20,7 @@
 
   ```dosini
     REACT_APP_API_URL=https://api.themoviedb.org/3
-    REACT_APP_API_KEY=SUA_KEY_TMDB
+    REACT_APP_API_KEY=SUA_API_KEY_TMDB
   ```
 
 - Agora é só rodar **yarn start**
